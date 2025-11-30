@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacts — SafeStep</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body class="bg-slate-50 p-6">
+  <a href="../index.html" class="text-blue-600 mb-4 inline-block">← Back</a>
+  <h1 class="text-2xl font-bold mb-4">Emergency Contacts</h1>
+
+  <div class="max-w-xl bg-white p-4 rounded-xl shadow">
+    <form id="contactForm" class="grid grid-cols-1 gap-3">
+      <input id="name" placeholder="Name" class="p-3 border rounded" />
+      <input id="phone" placeholder="Phone (with country code, e.g. +91xxxxxxxxxx)" class="p-3 border rounded" />
+      <button class="bg-blue-600 text-white p-3 rounded" type="submit">Add Contact</button>
+    </form>
+
+    <div id="contactList" class="mt-4 space-y-3"></div>
+  </div>
+
+  <script type="module" src="../src/firebase-init.js"></script>
+  <script type="module" src="../src/contacts.js"></script>
+</body>
+</html>
