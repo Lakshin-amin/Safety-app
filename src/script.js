@@ -90,15 +90,17 @@ document.getElementById("fakeCallBtn").addEventListener("click", () => {
 
 
 document.getElementById("aiHelpBtn").addEventListener("click", async () => {
-  const prompt = `You are a safety assistant. Give 5 concise safety tips for someone walking alone at night in an urban area. Provide short, numbered items.`;
+  const prompt = "Give 5 short safety tips for a woman walking alone at night.";
+  
   const res = await getAISafetySuggestions(prompt);
+
   if (res.error) {
-    alert("AI service unavailable. See console.");
-    console.warn(res);
+    alert("AI service unavailable. Check console.");
+    console.error(res);
     return;
   }
-  
-  const text = res.text || JSON.stringify(res);
+
+  const text = res.choices?.[0]?.message?.content || "No response from AI.";
   
   alert("AI Safety Tips:\n\n" + text);
 });

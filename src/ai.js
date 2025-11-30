@@ -9,7 +9,6 @@ export async function getAISafetySuggestions(prompt) {
     });
 
     return await res.json();
-
   } catch (err) {
     return { error: err.message };
   }
